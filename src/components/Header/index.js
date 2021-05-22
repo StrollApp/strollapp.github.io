@@ -22,10 +22,10 @@ const Header = ({ t }) => {
   };
 
   const MenuItem = () => {
-    const scrollTo = (id) => {
+    const scrollTo = id => {
       const element = document.getElementById(id);
       element.scrollIntoView({
-        behavior: "smooth",
+        behavior: "smooth"
       });
       setVisibility(false);
     };
@@ -55,21 +55,32 @@ const Header = ({ t }) => {
   return (
     <S.Header>
       <S.Container>
-        <Row type="flex" justify="space-between" gutter={20}>
-          <S.LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" />
+        <Row type='flex' justify='space-between' gutter={20}>
+          <S.LogoContainer to='/' aria-label='homepage'>
+            {/* switch out logo with plain text until we have a logo */}
+            {false && <SvgIcon src='logo.svg' />}
+            <Fragment>
+              <S.CustomNavLinkSmall>
+                <S.LogoText>{t("Stroll")}</S.LogoText>
+              </S.CustomNavLinkSmall>
+            </Fragment>
           </S.LogoContainer>
-          <S.NotHidden>
-            <MenuItem />
-          </S.NotHidden>
-          <S.Burger onClick={showDrawer}>
-            <S.Outline />
-          </S.Burger>
+          {/* temporarily hide the menu */}
+          {false && (
+            <div>
+              <S.NotHidden>
+                <MenuItem />
+              </S.NotHidden>
+              <S.Burger onClick={showDrawer}>
+                <S.Outline />
+              </S.Burger>
+            </div>
+          )}
         </Row>
         <CSSTransition
           in={!isSmallScreen || isNavVisible}
           timeout={350}
-          classNames="NavAnimation"
+          classNames='NavAnimation'
           unmountOnExit
         >
           <Drawer closable={false} visible={visible} onClose={onClose}>
@@ -79,7 +90,7 @@ const Header = ({ t }) => {
                   <S.Menu>Menu</S.Menu>
                 </Col>
                 <Col span={12}>
-                  <S.Outline padding="true" />
+                  <S.Outline padding='true' />
                 </Col>
               </S.Label>
             </Col>

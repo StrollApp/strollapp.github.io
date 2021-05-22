@@ -11,6 +11,14 @@ export const LogoContainer = styled(Link)`
   padding-top: 1rem;
 `;
 
+export const LogoText = styled.span`
+  font-size: 30px;
+  font-weight: slim;
+  color: #404041;
+  text-align: right;
+  display: flex;
+`;
+
 export const Container = styled.div`
   position: relative;
   width: 100%;
