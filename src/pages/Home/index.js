@@ -6,6 +6,7 @@ import AboutContent from "../../content/AboutContent.json";
 import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
+import FormContentBlock from "../../components/ContentBlock/FormContentBlock";
 
 const ContactFrom = lazy(() => import("../../components/ContactForm"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <Container>
       <ScrollToTop />
-      <ContentBlock
+      <FormContentBlock
         type='right'
         first='true'
         title={IntroContent.title}
@@ -27,7 +28,7 @@ const Home = () => {
         id='intro'
       />
       {/*hide this section for now*/}
-      {true && (
+      {false && (
         <div>
           <MiddleBlock
             title={MiddleBlockContent.title}
@@ -56,13 +57,13 @@ const Home = () => {
             icon='waving.svg'
             id='product'
           />
+          <ContactFrom
+            title={ContactContent.title}
+            content={ContactContent.text}
+            id='contact'
+          />
         </div>
       )}
-      <ContactFrom
-        title={ContactContent.title}
-        content={ContactContent.text}
-        id='contact'
-      />
     </Container>
   );
 };
