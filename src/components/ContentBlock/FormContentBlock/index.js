@@ -2,7 +2,7 @@ import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
 
-import SvgIcon from "../../../common/SvgIcon";
+import PreviewImage from "../../../common/PreviewImage";
 import Button from "../../../common/Button";
 import Input from "../../../common/Input";
 
@@ -22,7 +22,8 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
           <Slide left>
             <S.ContentWrapper>
               <h6>{t(title)}</h6>
-              <S.Content>{t(content)}</S.Content>
+              <S.Content>{"Stroll is a data-driven navigation app that allows pedestrians to map the safest route to their destination.\n"}</S.Content>
+              <S.Content>{"We are releasing a beta for UC Berkeley soon! Signup below to stay updated!"}</S.Content>
               <S.FormEntryWrapper>
                 <Input
                   type='text'
@@ -41,7 +42,7 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
         </Col>
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide right>
-            <SvgIcon
+            <PreviewImage
               src={icon}
               className='about-block-image'
               width='100%'
