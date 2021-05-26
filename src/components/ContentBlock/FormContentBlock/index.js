@@ -23,7 +23,7 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
             <S.ContentWrapper>
               <h6>{t(title)}</h6>
               <S.Content>{"Stroll is a data-driven navigation app that allows pedestrians to map the safest route to their destination.\n"}</S.Content>
-              <S.Content>{"We are releasing a beta for UC Berkeley soon! Signup below to stay updated!"}</S.Content>
+              <S.Content>{"We are releasing a beta for Berkeley soon! Sign up below to stay updated!"}</S.Content>
               <S.FormEntryWrapper>
                 <Input
                   type='text'
