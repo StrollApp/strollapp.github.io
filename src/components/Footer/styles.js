@@ -1,9 +1,10 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Footer = styled.footer`
   background: rgb(249, 250, 252);
-  padding: 2.5rem 0;
+  padding: 2.5rem 0px;
+  bottom: 0px;
 `;
 
 export const Title = styled.h4`
@@ -14,6 +15,14 @@ export const Title = styled.h4`
   @media screen and (max-width: 414px) {
     padding: 1.5rem 0;
   }
+`;
+
+export const LogoText = styled.span`
+  font-size: 30px;
+  font-weight: slim;
+  color: #404041;
+  text-align: right;
+  display: flex;
 `;
 
 export const NavLink = styled(Link)`
@@ -75,8 +84,8 @@ export const Para = styled.div`
 export const Large = styled(Link)`
   font-size: 16px;
   color: rgba(2, 7, 62, 0.8);
-  text-align: ${(props) => (props.left ? 'left' : '')};
-  padding: ${(props) => (props.left ? '0 10%' : '')};
+  text-align: ${props => (props.left ? "left" : "")};
+  padding: ${props => (props.left ? "0 10%" : "")};
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-transform: capitalize;

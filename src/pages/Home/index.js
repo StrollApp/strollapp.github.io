@@ -24,7 +24,7 @@ const Home = () => {
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon='developer.svg'
+        icon='graphs.svg'
         id='intro'
       />
       {/*hide this section for now*/}

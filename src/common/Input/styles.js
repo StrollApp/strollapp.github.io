@@ -15,6 +15,7 @@ export const Input = styled.input`
   font-size: 0.875rem;
   padding: 1rem 1.25rem;
   transition: border-color 0.3s ease-in;
+  height: 60px;
   border-radius: 8px;
   color: #000;
 
