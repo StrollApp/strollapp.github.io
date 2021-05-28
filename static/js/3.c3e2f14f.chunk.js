@@ -1,0 +1,2 @@
+(this["webpackJsonplanding-page"]=this["webpackJsonplanding-page"]||[]).push([[3],{114:function(t,i,n){"use strict";n.r(i);var a=n(1);i.default=function(t){var i=t.src,n=t.width,s=t.height;return Object(a.jsx)("img",{src:"/img/svg/".concat(i),alt:i,with:n,height:s})}}}]);
+//# sourceMappingURL=3.c3e2f14f.chunk.js.map
