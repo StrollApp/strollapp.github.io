@@ -1,6 +1,7 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
+import { useForm, ValidationError } from '@formspree/react';
 
 import PreviewImage from "../../../common/PreviewImage";
 import Button from "../../../common/Button";
@@ -15,6 +16,10 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
       behavior: "smooth"
     });
   };
+  const [state, handleSubmit] = useForm("xqkwqzwa");
+  if (state.succeeded) {
+    return <p>Thanks! We will keep you updated!</p>;
+  }
   return (
     <S.FormBlockContainer>
       <Row type='flex' justify='space-between' align='middle' id={id}>
@@ -25,17 +30,19 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
               <S.Content>{"Stroll is a data-driven navigation app that allows pedestrians to map the safest route to their destination.\n"}</S.Content>
               <S.Content>{"We are releasing a beta for Berkeley soon! Sign up below to stay updated!"}</S.Content>
               <S.FormEntryWrapper>
-                <Input
-                  type='text'
-                  name='email'
-                  id=''
-                  placeholder='Enter your email'
-                  value={""}
-                  onChange={() => {}}
-                />
-                <Button key={id} width='true' onClick={() => scrollTo("about")}>
-                  {t("Stay Updated!")}
-                </Button>
+                <form onSubmit={handleSubmit}>
+                    <Input
+                      type='email'
+                      name='email'
+                      id=''
+                      placeholder='Enter your email'
+                      value={""}
+                      onChange={() => {}}
+                    />
+                    <Button type="submit" disabled={state.submitting} key={id} width='true'>
+                      {t("Stay Updated!")}
+                    </Button>
+                  </form>
               </S.FormEntryWrapper>
             </S.ContentWrapper>
           </Slide>
