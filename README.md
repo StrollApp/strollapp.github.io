@@ -6,4 +6,4 @@ Hosted [here](https://strollapp.github.io/).
 
 Start the site using ``yarn start``.
 
-Original template found [here](https://github.com/Adrinlol/landy-react-template).
+Deploy the site using ``yarn deploy``.
