@@ -8,15 +8,15 @@ import * as S from "./styles";
 const Button = lazy(() => import("../../common/Button"));
 
 const MiddleBlock = ({ title, content, button, t }) => {
-  const scrollTo = (id) => {
+  const scrollTo = id => {
     const element = document.getElementById(id);
     element.scrollIntoView({
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   return (
     <S.MiddleBlock>
-      <Row type="flex" justify="center" align="middle">
+      <Row type='flex' justify='center' align='middle'>
         <Fade bottom>
           <S.ContentWrapper>
             <Col lg={24} md={24} sm={24} xs={24}>
@@ -24,9 +24,9 @@ const MiddleBlock = ({ title, content, button, t }) => {
               <S.Content>{t(content)}</S.Content>
               {button ? (
                 <Button
-                  name="submit"
-                  type="submit"
-                  onClick={() => scrollTo("mission")}
+                  name='submit'
+                  type='submit'
+                  onClick={() => scrollTo("intro")}
                 >
                   {t(button)}
                 </Button>

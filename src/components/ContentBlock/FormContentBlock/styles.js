@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FormBlockContainer = styled.section`
   position: relative;
-  padding: 1.5rem 0 8rem;
+  padding: 1.5rem 35px 8rem;
 
   @media only screen and (max-width: 768px) {
     padding: 0px 0 6rem;

@@ -80,14 +80,17 @@ const Footer = ({ t }) => {
                   href='https://github.com/StrollApp'
                   src='github.svg'
                 />
-                {false &&
                 <SocialLink
-                  href='https://www.linkedin.com/in/joseph-jin/'
+                  href='https://www.linkedin.com/company/strollapp'
                   src='linkedin.svg'
-                />}
+                />
                 <SocialLink
-                  href='https://instagram.com/stroll.app?utm_medium=copy_link'
+                  href='https://instagram.com/stroll.app'
                   src='instagram.svg'
+                />
+                <SocialLink
+                  href='https://twitter.com/getstrollapp'
+                  src='twitter.svg'
                 />
               </S.FooterContainer>
             </Row>

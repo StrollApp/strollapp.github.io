@@ -34,7 +34,7 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
               </S.Content>
               <S.Content>
                 {!state.succeeded
-                  ? "We are releasing a beta for Berkeley soon! Sign up below to stay updated!"
+                  ? "We are releasing a beta for Berkeley soon! Sign up below to stay updated! 🔔🔔"
                   : "We are releasing a beta for Berkeley soon! Thanks for signing up, we will keep you updated!"}
               </S.Content>
               {state.succeeded ? (
