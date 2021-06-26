@@ -27,11 +27,7 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
           <Slide left>
             <S.ContentWrapper>
               <h6>{t(title)}</h6>
-              <S.Content>
-                {
-                  "Stroll is a data-driven navigation app that allows pedestrians to map the safest route to their destination.\n"
-                }
-              </S.Content>
+              <S.Content>{content}</S.Content>
               <S.Content>
                 {!state.succeeded
                   ? "We are releasing a beta for Berkeley soon! Sign up below to stay updated! 🔔🔔"
