@@ -13,7 +13,7 @@ const Router = () => {
       <GlobalStyles />
       <Header />
       <Switch>
-        {routes.map((routeItem) => {
+        {routes.map(routeItem => {
           return (
             <Route
               key={routeItem.component}
@@ -23,6 +23,13 @@ const Router = () => {
             />
           );
         })}
+        <Route
+          path='/survey'
+          component={() => {
+            window.location.href = "https://forms.gle/dAb8oswptCPPdmjr6";
+            return null;
+          }}
+        />
       </Switch>
       <Footer />
     </Suspense>
