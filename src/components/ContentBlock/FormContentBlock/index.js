@@ -10,12 +10,12 @@ import Input from "../../../common/Input";
 import * as S from "./styles";
 
 const FormBlock = ({ title, content, button, icon, t, id }) => {
-  const scrollTo = id => {
-    const element = document.getElementById(id);
-    element.scrollIntoView({
-      behavior: "smooth"
-    });
-  };
+  // const scrollTo = id => {
+  //   const element = document.getElementById(id);
+  //   element.scrollIntoView({
+  //     behavior: "smooth"
+  //   });
+  // };
   const [state, handleSubmit] = useForm("xqkwqzwa");
   // if (state.succeeded) {
   //   return <p>Thanks! We will keep you updated!</p>;

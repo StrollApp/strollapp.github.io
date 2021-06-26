@@ -2,7 +2,7 @@
   "name": "landing-page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://strollapp.github.io/",
+  "homepage": "https://getstroll.app/",
   "dependencies": {
     "@formspree/react": "^2.2.3",
     "@testing-library/jest-dom": "^5.11.9",
