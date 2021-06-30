@@ -1,11 +1,13 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
-import { useForm, ValidationError } from "@formspree/react";
+import { useForm } from "@formspree/react";
 
 import PreviewImage from "../../../common/PreviewImage";
 import Button from "../../../common/Button";
 import Input from "../../../common/Input";
+
+import { useState } from "react";
 
 import * as S from "./styles";
 
@@ -16,7 +18,22 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
   //     behavior: "smooth"
   //   });
   // };
-  const [state, handleSubmit] = useForm("xqkwqzwa");
+  const [state, handleSubmit] = useForm("xqkwlqoo");
+  const [formState, setFormState] = useState({});
+  const [error, setError] = useState(null);
+
+  const phoneNumberRegex =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+  const checkSubmission = event => {
+    event.preventDefault();
+    if (!formState.telephone.match(phoneNumberRegex)) {
+      setError("please enter valid phone number");
+    } else {
+      setError(null);
+      handleSubmit(event);
+    }
+  };
   // if (state.succeeded) {
   //   return <p>Thanks! We will keep you updated!</p>;
   // }
@@ -30,21 +47,25 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
               <S.Content>{content}</S.Content>
               <S.Content>
                 {!state.succeeded
-                  ? "We are releasing a beta for Berkeley soon! Sign up below to stay updated! 🔔🔔"
-                  : "We are releasing a beta for Berkeley soon! Thanks for signing up, we will keep you updated!"}
+                  ? "We are releasing a beta for Berkeley soon! Sign up below to stay updated! 🔔📲🔔"
+                  : "We are releasing a beta for Berkeley soon! Thanks for signing up, we will keep you updated! 🔔📲🔔"}
               </S.Content>
               {state.succeeded ? (
                 <div />
               ) : (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={checkSubmission}>
                   <S.FormEntryWrapper>
                     <Input
-                      type='email'
-                      name='email'
+                      type='telephone'
+                      name='telephone'
                       id=''
-                      placeholder='Enter your email'
+                      placeholder='enter your phone #'
                       value={""}
-                      onChange={() => {}}
+                      onChange={event => {
+                        var res = { ...formState };
+                        res.telephone = event.target.value;
+                        setFormState(res);
+                      }}
                     />
                     <Button
                       type='submit'
@@ -55,12 +76,11 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
                       {t("Stay Updated!")}
                     </Button>
                   </S.FormEntryWrapper>
-                  <ValidationError
-                    style={{ color: "red" }}
-                    field='email'
-                    prefix='Input'
-                    errors={state.errors}
-                  />
+                  {error ? (
+                    <p style={{ color: "red", fontSize: 12 }}>{error}</p>
+                  ) : (
+                    <div />
+                  )}
                 </form>
               )}
             </S.ContentWrapper>
