@@ -77,16 +77,24 @@ const Footer = ({ t }) => {
               </S.NavLink>
               <S.FooterContainer>
                 <SocialLink
-                  href='https://github.com/StrollApp'
-                  src='github.svg'
-                />
-                <SocialLink
                   href='https://www.linkedin.com/company/strollapp'
                   src='linkedin.svg'
                 />
                 <SocialLink
                   href='https://instagram.com/stroll.app'
                   src='instagram.svg'
+                />
+                <SocialLink
+                  href='https://m.facebook.com/getstrollapp/'
+                  src='facebook.svg'
+                />
+                <SocialLink
+                  href='https://github.com/StrollApp'
+                  src='github.svg'
+                />
+                <SocialLink
+                  href='https://www.reddit.com/user/strollapp'
+                  src='reddit.svg'
                 />
                 <SocialLink
                   href='https://twitter.com/getstrollapp'
