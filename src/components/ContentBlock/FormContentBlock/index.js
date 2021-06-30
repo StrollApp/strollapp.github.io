@@ -28,7 +28,7 @@ const FormBlock = ({ title, content, button, icon, t, id }) => {
   const checkSubmission = event => {
     event.preventDefault();
     if (!formState.telephone.match(phoneNumberRegex)) {
-      setError("please enter valid phone number");
+      setError("please enter a valid phone number");
     } else {
       setError(null);
       handleSubmit(event);
