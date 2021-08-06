@@ -30,6 +30,13 @@ const Router = () => {
             return null;
           }}
         />
+        <Route
+          path='/beta'
+          component={() => {
+            window.location.href = "https://github.com/StrollApp/beta-testing-handbook/blob/master/BetaTestingHandbook.md";
+            return null;
+          }}
+        />
       </Switch>
       <Footer />
     </Suspense>
